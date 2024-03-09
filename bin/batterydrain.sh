@@ -129,9 +129,7 @@ oneuidrain() {
 routine() {
     #Routines
     clear
-    printf "\n${RESET}${txtbgblu}${BOLD}Routine for reduce drain in WIFI:${RESET}\n${txtbggrn}${BOLD}1. Add if 'connected to wifi' and choose a preferred Wifi. n2. Add then 'switch mobile data to 3g' and 'mobile data off'\n3. Turn off the 'revert actions at the end of routine'\n4. Save the routine. \n5. Create a second routine: Add if 'disconnected to Wifi' \n6. Add then 'switch mobile data to 4g/5g' and 'turn on mobile data'. \n7 Turn off the 'revert actions at the end of routine. \n8 Save the routine.${RESET}\n${txtbgblu}${BOLD}Enjoy :)${RESET}\n
-    ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
-
+    printf "\n${RESET}${txtbgblu}${BOLD}Routine for reduce drain in WIFI:${RESET}\n${txtbggrn}${BOLD}1. Add if ${txtinv}${BOLD}'connected to wifi'${RESET}${txtbggrn}${BOLD} and choose a preferred Wifi. n2. Add then ${txtinv}${BOLD}'switch mobile data to 3g'${RESET}${txtbggrn}${BOLD} and ${txtinv}${BOLD}'mobile data off'${RESET}${txtbggrn}${BOLD}\n3. Turn off the ${txtinv}${BOLD}'revert actions'${RESET}${txtbggrn}${BOLD} at the end of routine'\n4. Save the routine. \n5. Create a second routine: Add if ${txtinv}${BOLD}'disconnected to Wifi'${RESET}${txtbggrn}${BOLD} \n6. Add then ${txtinv}${BOLD}'switch mobile data to 4g/5g'${RESET}${txtbggrn}${BOLD} and ${txtinv}${BOLD}'turn on mobile data'${RESET}${txtbggrn}${BOLD}. \n7 Turn off the ${txtinv}${BOLD}'revert actions'${RESET}${txtbggrn}${BOLD} at the end of routine. \n8 Save the routine.${RESET}\n${txtbgblu}${BOLD}Enjoy :)${RESET}\n"
     printf "${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
     read -r a
     if [ $sudocheck -eq 1 ]; then
