@@ -82,6 +82,15 @@ or
 curl -o /data/data/com.termux/files/usr/bin/infa https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/infa && chmod +x /data/data/com.termux/files/usr/bin/infa
 ```
 
+
+## How to start ?
+
+### 01. Start Shizuku or Grant root access to your Termux.
+### 02. Type this in Termux and press enter :
+```
+infa -s
+```
+
 ## Infa usage:
 ### Dowload InfaScript:
 ```
@@ -104,18 +113,6 @@ infa -s
 ```
 
 
-## How to start ?
-
-### 01. Start Shizuku or Grant root access to your Termux.
-### 02. Type this in Termux and press enter :
-```
-infa -s
-```
-
-## To Update💻 run:
-```
-infa -u
-```
 
 > [!IMPORTANT]
 > To make commands work u have to choose first Shizuku mode or SU mode
