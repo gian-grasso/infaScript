@@ -18,7 +18,7 @@ file_path="$1"
 cd $HOME/infaScript ; bash run.sh
 elif [ "$1" == "-u" ]; then
 rm $HOME/setup.sh ; wget https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/setup.sh > /dev/null 2>&1 ; bash setup.sh
-elif [ "$1" == "-h" ]
+elif [ "$1" == "-h" ]; then
 help
 else
 help
