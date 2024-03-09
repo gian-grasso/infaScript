@@ -35,7 +35,7 @@ extradim() {
     printf "\n${RESET}${txtbgblu}${BOLD} I'll redirect u to EXTRADIM settings${RESET}\n
     ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
     read -r a
-    am start -n 'com.android.settings/.Settings\$ReduceBrightColorsSettingsActivity'
+    su -c am start -n 'com.android.settings/.Settings\$ReduceBrightColorsSettingsActivity'
     clear
     printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u have done...${RESET}\n"
     read -r a
