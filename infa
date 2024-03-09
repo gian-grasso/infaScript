@@ -1,7 +1,7 @@
 #!/bin/bash
 
 help() {
-  printf "Usage: infa <arguments>\n-d Download InfaScripts\n-s Starts InfaScripts\n-u Update InfaScripts\n-r Remove InfaScripts\n-h Help"
+  printf "Usage: infa <arguments>\n -d Download InfaScripts\n-s Starts InfaScripts\n-u Update InfaScripts\n-r Remove InfaScripts\n-h Help"
   exit 1
 }
 
