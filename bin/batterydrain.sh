@@ -126,16 +126,40 @@ oneuidrain() {
     start
 }
 
+routine() {
+    #Routines
+    clear
+    printf "\n${RESET}${txtbgblu}${BOLD}Routine for reduce drain in WIFI:${RESET}\n${txtbggrn}${BOLD}1. Add if 'connected to wifi' and choose a preferred Wifi. n2. Add then 'switch mobile data to 3g' and 'mobile data off'\n3. Turn off the 'revert actions at the end of routine'\n4. Save the routine. \n5. Create a second routine: Add if 'disconnected to Wifi' \n6. Add then 'switch mobile data to 4g/5g' and 'turn on mobile data'. \n7 Turn off the 'revert actions at the end of routine. \n8 Save the routine.${RESET}\n${txtbgblu}${BOLD}Enjoy :)${RESET}\n
+    ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
+
+    printf "${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
+    read -r a
+    if [ $sudocheck -eq 1 ]; then
+    su -c am start -n com.samsung.android.app.routines/com.samsung.android.app.routines.ui.main.RoutineLaunchActivity
+    clear
+    else
+    am start -n com.samsung.android.app.routines/com.samsung.android.app.routines.ui.main.RoutineLaunchActivity
+    clear
+    fi
+    printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u want to return to FIX DRAIN menu...${RESET}\n"
+    read -r a
+    clear
+#After steps
+
+    start
+}
+
 start(){
 clear
-printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## FIX DRAIN ##########${WHITE}${BOLD}\n
+printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## FIX DRAIN ##########${WHITE}${BOLD}
 1.  Fix GMS drain 
 2.  Fix general app drain ${txtbgred}${BOLD}For Samsung only${RESET}
-3.  ${WHITE}${BOLD}Fix Oneui app drain ${txtbgred}${BOLD}For Samsung only${RESET}
-${MAGENTA}${BOLD}4.  Return to Start
-${RED}${BOLD}5.  Exit
-\n${RESET}${txtbgrst}${BLUE}${BOLD}###############################${RESET}${BLUE}${BOLD}\n
-Enter your choice: "
+${WHITE}${BOLD}3.  Fix Oneui app drain ${txtbgred}${BOLD}For Samsung only${RESET}
+${WHITE}${BOLD}4.  Create a routine to save battery ${txtbgred}${BOLD}For Samsung only${RESET}
+${MAGENTA}${BOLD}5.  Return to Start
+${RED}${BOLD}6.  Exit
+\n${RESET}${txtbgrst}${BLUE}${BOLD}###############################${RESET}${BLUE}${BOLD}
+Enter your choice: \n"
 read -r choice
 }
 
@@ -156,9 +180,12 @@ run_me(){
                 oneuidrain
                 ;;
             4)
-                exit 0
+                routine
                 ;;
             5)
+                exit 0
+                ;;
+            6)
                 pkill -f InfaScript.sh
                 ;;
             *)
