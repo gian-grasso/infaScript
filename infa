@@ -1,11 +1,7 @@
 #!/bin/bash
 
 help() {
-  echo "Usage: infa <arguments>
-  -d Download InfaScript.sh
-  -s Starts InfaScript.sh
-  -u Update InfaScript.sh
-  -h Help"
+  echo "Usage: infa <arguments>\n-d Download InfaScript.sh\n-s Starts InfaScript.sh\n-u Update InfaScript.sh\n-h Help"
   exit 1
 }
 
