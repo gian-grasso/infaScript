@@ -71,7 +71,11 @@ A Script to execute some Android ADB commands to simply help do some battery and
 ### 02. Paste this in Termux and press enter:
 
 ```
-apt update -y ; echo -e "\n" ; apt install wget git tsu -y ; echo -e "\n"; rm -rf $HOME/infaScript > /dev/null 2>&1 ; wget https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/setup.sh > /dev/null 2>&1 ; bash setup.sh
+curl -o /data/data/com.termux/files/usr/bin/infa https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/infa && chmod +x /data/data/com.termux/files/usr/bin/infa
+```
+### 03. Paste this to download
+```
+infa -d
 ```
 
 ## How to start ?
@@ -79,12 +83,12 @@ apt update -y ; echo -e "\n" ; apt install wget git tsu -y ; echo -e "\n"; rm -r
 ### 01. Start Shizuku or Grant root access to your Termux.
 ### 02. Type this in Termux and press enter :
 ```
-cd $HOME/infaScript ; bash run.sh
+infa -s
 ```
 
 ## To Update💻 run:
 ```
-rm setup.sh ; wget https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/setup.sh > /dev/null 2>&1 ; bash setup.sh
+infa -u
 ```
 
 > [!IMPORTANT]
