@@ -11,6 +11,7 @@ extradim() {
     else
     am start -n 'com.android.settings/.Settings\$ReduceBrightColorsSettingsActivity'
     clear
+    fi
     printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u have done...${RESET}\n"
     read -r a
     clear
