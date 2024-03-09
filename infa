@@ -2,16 +2,21 @@
 
 # Verifica se sono stati forniti argomenti
 if [ $# -eq 0 ]; then
-  echo "Usage: infa -d"
+  echo "Usage: infa <arguments>
+  -d Starts InfaScript.sh
+  -u Update InfaScript.sh"
   exit 1
 elif [ "$1" == "-d" ]; then
 file_path="$1"
  # Apri il file con l'app predefinita
 cd $HOME/infaScript ; bash run.sh
+elif [ "$1" == "-u" ]; then
+rm $HOME/setup.sh ; wget https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/setup.sh > /dev/null 2>&1 ; bash setup.sh
 elif [ "$1" != "-d" ]; then
-    echo "Usage: infa -d"
+    echo "Usage: infa <arguments>
+  -d Starts InfaScript.sh
+  -u Update InfaScript.sh"
     exit 1
 fi
 
-# Costruisci il percorso completo del file nella home
-  
+# Costruisci il percorso completo del file 
