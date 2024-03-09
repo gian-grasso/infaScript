@@ -36,10 +36,10 @@ extradim() {
     ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
     read -r a
     if [ $sudocheck -eq 1 ]; then
-    su -c am start -n com.android.settings/com.android.settings.Settings$ReduceBrightColorsSettingsActivity
+    su -c am start -n com.android.settings/com.android.settings.Settings$ReduceBrightColorsSettingsActivity -a android.intent.action.MAIN
     clear
     else
-    am start -n com.android.settings/com.android.settings.Settings$ReduceBrightColorsSettingsActivity
+    am start -n com.android.settings/com.android.settings.Settings$ReduceBrightColorsSettingsActivity -a android.intent.action.MAIN
     clear
     fi
     printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u have done...${RESET}\n"
