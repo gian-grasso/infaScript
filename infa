@@ -1,7 +1,7 @@
 #!/bin/bash
 
 help() {
-  echo "Usage: infa <arguments>\n-d Download InfaScript.sh\n-s Starts InfaScript.sh\n-u Update InfaScript.sh\n-h Help"
+  echo "Usage: infa <arguments>\n-d Download InfaScripts\n-s Starts InfaScripts\n-u Update InfaScripts\n-r Remove InfaScripts\n-h Help"
   exit 1
 }
 
@@ -23,10 +23,12 @@ elif [ "$1" == "-u" ]; then
   rm $HOME/setup.sh
   wget https://raw.githubusercontent.com/Infamousmick/infaScript/Personal/setup.sh > /dev/null 2>&1
   bash setup.sh
+elif [ "$1" == "-r" ]; then
+rm $HOME/setup.sh
+rm -rf $HOME/infaScript
+echo "InfaScript removed"
 elif [ "$1" == "-h" ]; then
   help
 else
   help
 fi
-
-# Costruisci il percorso completo del file
