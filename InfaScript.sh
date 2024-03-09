@@ -29,18 +29,7 @@ exit_a() {
             ;;
     esac
 }
-extradim() {
-#Extradim
-    clear
-    printf "\n${RESET}${txtbgblu}${BOLD} I'll redirect u to EXTRADIM settings${RESET}\n
-    ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
-    read -r a
-    su -c am start -n 'com.android.settings/.Settings\$ReduceBrightColorsSettingsActivity'
-    clear
-    printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u have done...${RESET}\n"
-    read -r a
-    clear
-}
+
 # Function to display the menu
 start() {
     clear
@@ -56,7 +45,7 @@ start() {
     8.  App Debloater/Enabler/App search
     9.  Fix battery drain
     10. Backup partitions
-    11. Extra Dim
+    11. Hidden settings
     ${RED}${BOLD}12. Exit\n
     ${txtbgrst}${BLUE}${BOLD}#####################################${RESET}${BLUE}${BOLD}\n
     Enter your choice: "
@@ -102,7 +91,7 @@ run_me(){
                 sh bin/dd.sh
                 ;;
             11)
-                extradim
+                sh hidden.sh
                 ;;
             12)
                 exit_a
