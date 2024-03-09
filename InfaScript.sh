@@ -91,7 +91,7 @@ run_me(){
                 sh bin/dd.sh
                 ;;
             11)
-                sh hidden.sh
+                sh bin/hidden.sh
                 ;;
             12)
                 exit_a
