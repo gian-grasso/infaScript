@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Verifica se sono stati forniti argomenti
+if [ $# -eq 0 ]; then
+  echo "Usage: infa -d"
+  exit 1
+elif [ "$1" == "-d" ]; then
+file_path="$1"
+ # Apri il file con l'app predefinita
+cd $HOME/infaScript ; bash run.sh
+elif [ "$1" != "-d" ]; then
+    echo "Usage: infa -d"
+    exit 1
+fi
+
+# Costruisci il percorso completo del file nella home
+  
