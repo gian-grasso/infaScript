@@ -45,7 +45,7 @@ start() {
     8.  App Debloater/Enabler/App search
     9.  Fix battery drain
     10. Backup partitions
-    ${RED}${BOLD}10. Exit\n
+    ${RED}${BOLD}11. Exit\n
     ${txtbgrst}${BLUE}${BOLD}#####################################${RESET}${BLUE}${BOLD}\n
     Enter your choice: "
     read -r choice
