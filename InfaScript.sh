@@ -44,6 +44,7 @@ start() {
     7.  Battery Health Check
     8.  App Debloater/Enabler/App search
     9.  Fix battery drain
+    10. Backup partitions
     ${RED}${BOLD}10. Exit\n
     ${txtbgrst}${BLUE}${BOLD}#####################################${RESET}${BLUE}${BOLD}\n
     Enter your choice: "
@@ -86,6 +87,9 @@ run_me(){
                 sh bin/batterydrain.sh
                 ;;
             10)
+                sh bin/dd.sh
+                ;;
+            11)
                 exit_a
                 ;;
             *)
