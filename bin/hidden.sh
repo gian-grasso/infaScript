@@ -25,7 +25,7 @@ hiddenconnect(){
     ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
     read -r a
     if [ $sudocheck -eq 1 ]; then
-    su -c am broadcast -a com.samsung.android.action.SECRET_CODE -d android_secret_code://27663368378 -n com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
+    am broadcast -a com.samsung.android.action.SECRET_CODE -d android_secret_code://27663368378 -n com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
     clear
     else
     am broadcast -a com.samsung.android.action.SECRET_CODE -d android_secret_code://27663368378 -n com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
