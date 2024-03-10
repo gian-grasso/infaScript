@@ -62,8 +62,8 @@ run_me(){
                 extradim
                 ;;
             2)  
-                ;;
                 hiddenconnect
+                ;;
             3)
                 exit 0
                 ;;
