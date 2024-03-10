@@ -18,12 +18,34 @@ extradim() {
     start
 }
 
+hiddenconnect(){
+# Connection Settings
+    clear
+    printf "\n${RESET}${txtbgblu}${BOLD} I'll redirect u to Hidden Connection settings settings${RESET}\n
+    ${txtinv}${BOLD}Press ENTER to redirect...${RESET}\n"
+    read -r a
+    if [ $sudocheck -eq 1 ]; then
+    su am broadcast -a com.samsung.android.action.SECRET_CODE -d android_secret_code://27663368378 -n com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
+    clear
+    else
+    am broadcast -a com.samsung.android.action.SECRET_CODE -d android_secret_code://27663368378 -n com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
+    clear
+    fi
+    printf "\n${RESET}${txtbgred}${BOLD}Press ENTER when u have done...${RESET}\n"
+    read -r a
+    clear
+    start
+}
+  }
+  
+
 start(){
 clear
 printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## HIDDEN MENU ##########${WHITE}${BOLD}
 1.  Extra DIM ${txtbgred}${BOLD}For Samsung only${RESET}
-${MAGENTA}${BOLD}2.  Return to Start
-${RED}${BOLD}3.  Exit
+${WHITE}${BOLD}2.  Hidden Connection settings
+${MAGENTA}${BOLD}3.  Return to Start
+${RED}${BOLD}4.  Exit
 \n${RESET}${txtbgrst}${BLUE}${BOLD}########################################${RESET}${BLUE}${BOLD}
 Enter your choice: \n"
 read -r choice
@@ -39,10 +61,13 @@ run_me(){
             1)
                 extradim
                 ;;
-            2)
+            2)  
+                ;;
+                hiddenconnect
+            3)
                 exit 0
                 ;;
-            3)
+            4)
                 pkill -f InfaScript.sh
                 ;;
             *)
