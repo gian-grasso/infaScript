@@ -17,8 +17,6 @@ for path in "${possible_partitions[@]}"; do
     if [ $? -eq 0 ]; then
         android_partitions+=("$path")
         printf "Android partitions found in: $path"
-        printf "List of partitions:"
-        printf "${YELLOW}$partitions\n"
         break
     fi
 done
@@ -30,12 +28,12 @@ if [ ${#android_partitions[@]} -eq 0 ]; then
 fi
 
 # Chiedi all'utente di selezionare una partizione
-printf "Seleziona una partizione:"
+printf "Choose a partition:"
 select partition in $partitions; do
     if [ -n "$partition" ]; then
         break
     else
-        printf "Selezione non valida. Riprova."
+        printf "Choose a valid answer."
     fi
 done
 
