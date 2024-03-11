@@ -2,9 +2,9 @@
 
 # Verifica se l'eseguibile 'ls' è disponibile
 clear
-printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## Partitions Backup ##########${WHITE}${BOLD}"
+printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## Partitions Backup ##########${WHITE}${BOLD}\n"
 if ! command -v ls &> /dev/null; then
-    printf "The 'ls' command is not available. Make sure it is installed."
+    printf "The 'ls' command is not available. Make sure it is installed.\n"
     exit 1
 fi
 
@@ -18,22 +18,23 @@ for path in "${possible_partitions[@]}"; do
     partitions=$(ls "$path" 2>/dev/null)
     if [ $? -eq 0 ]; then
         android_partitions+=("$path")
-        printf "Android partitions found in: $path"
+        printf "Android partitions found in: $path\n"
         break
     fi
 done
 
 # Se nessuna partizione è stata trovata, segnala un errore
 if [ ${#android_partitions[@]} -eq 0 ]; then
-    printf "Unable to find Android partitions automatically. Check manually."
+    printf "Unable to find Android partitions automatically. Check manually.\n"
     exit 1
 fi
 
 # Chiedi all'utente di selezionare una partizione
-printf "Choose a partition:"
+printf "Choose a partition: "
 select partition in $partitions; do
     if [ -n "$partition" ]; then
-        read -p "Are you sure you want to backup the selected partition? (Y/N): " confirm
+        printf "Are you sure you want to backup the selected partition? (Y/N): "
+        read -r  confirm
         case "$confirm" in
             [yY])
                 break
