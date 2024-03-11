@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Verifica se l'eseguibile 'ls' è disponibile
 clear
 printf "\n${RESET}${txtbgrst}${BLUE}${BOLD}########## Partitions Backup ##########${WHITE}${BOLD}"
@@ -31,24 +33,36 @@ fi
 printf "Choose a partition:"
 select partition in $partitions; do
     if [ -n "$partition" ]; then
-        break
+        read -p "Are you sure you want to backup the selected partition? (Y/N): " confirm
+        case "$confirm" in
+            [yY])
+                break
+                ;;
+            [nN])
+                printf "Backup aborted.\n"
+                exit 0
+                ;;
+            *)
+                printf "Invalid input. Please enter Y or N.\n"
+                ;;
+        esac
     else
-        printf "Choose a valid answer."
+        printf "Choose a valid answer.\n"
     fi
 done
 
 # Chiedi all'utente di specificare un nome per il backup
-printf "\nChoose the backup name"
+printf "\nChoose the backup name: "
 read -r backup_name
 
 # Esegui il backup con 'dd'
 backup_path="/sdcard/$backup_name.img"
-printf "Saving the backup $partition in $backup_path..."
+printf "Saving the backup of partition $partition in $backup_path..."
 dd if="$android_partitions/$partition" of="$backup_path" bs=4096
 
 if [ $? -eq 0 ]; then
-    printf "Backup completed successfully. The file is saved in $backup_path"
+    printf "Backup completed successfully. The file is saved in $backup_path\n"
 else
-    printf "An error occurred during backup."
+    printf "An error occurred during backup.\n"
     exit 1
 fi
