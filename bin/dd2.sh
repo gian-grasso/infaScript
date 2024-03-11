@@ -30,7 +30,7 @@ if [ ${#android_partitions[@]} -eq 0 ]; then
 fi
 
 # Chiedi all'utente di selezionare una partizione
-printf "Choose a partition: "
+printf "Choose a partition: \n"
 select partition in $partitions; do
     if [ -n "$partition" ]; then
         printf "Are you sure you want to backup the selected partition? (Y/N): "
